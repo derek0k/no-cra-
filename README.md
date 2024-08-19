@@ -54,3 +54,20 @@
   root.render(React.createElement(App));
 </script>
 ```
+
+### 4. Babel 설치하기
+
+> Babel과 같은 트랜스파일러를 사용하면 JSX와 같은 최신 문법을 JavaScript로 변환할 수 있습니다. 하지만 브라우저에서 Babel을 사용하다 보니 `You are using the in-browser Babel transformer. Be sure to precompile your scripts for production - https://babeljs.io/docs/setup/`라고 경고가 발생하네요! 이 경고는 브라우저에서 직접 트랜스파일하지 말고, 미리 컴파일하여 배포하라는 의미네요
+
+다음은 브라우저에서 Babel을 사용하는 예시입니다:
+
+```html
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+  const App = () => {
+    return <h1>Hello, React!</h1>;
+  };
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>
+```

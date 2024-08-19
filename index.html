@@ -6,15 +6,16 @@
     <title>no-cra</title>
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
   <body>
     <div id="root"></div>
-    <script>
+    <script type="text/babel">
       const App = () => {
-        return React.createElement("h1", null, "Hello, React!");
+        return <h1>Hello, React!</h1>;
       };
       const root = ReactDOM.createRoot(document.getElementById("root"));
-      root.render(React.createElement(App));
+      root.render(<App />);
     </script>
   </body>
 </html>
