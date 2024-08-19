@@ -40,3 +40,17 @@
 <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 ```
+
+### 3. 스크립트를 Vanilla JS 문법으로 변경하기
+
+> 이제서야 문제없이 작동하네! 그런데 JSX를 사용하면 코드 작성이 더 편할 것 같은데, 방법이 없을까?
+
+```html
+<script>
+  const App = () => {
+    return React.createElement("h1", null, "Hello, React!");
+  };
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(React.createElement(App));
+</script>
+```
