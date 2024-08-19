@@ -10,3 +10,24 @@
 2. Babel을 사용한 JSX 문법 변환
 3. Webpack을 통한 번들링 설정
 4. 개발 환경 최적화 및 플러그인 활용
+
+## 🚀 문제와 해결 과정
+
+### 1. HTML 파일을 생성하고 기존의 React 컴포넌트처럼 내용을 작성해보자.
+
+> ReactDOM의 메소드를 사용하려고 했는데, 아직 가져오지 않았네!
+
+```html
+<div id="root"></div>
+<script>
+  const App = () => {
+    return (
+      <>
+        <h1>Hello, React!</h1>
+      </>
+    );
+  };
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  root.render(<App />);
+</script>
+```
