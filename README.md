@@ -31,3 +31,12 @@
   root.render(<App />);
 </script>
 ```
+
+### 2. React + React DOM CDN 추가하기
+
+> 그런데 라이브 서버로 가보니까 `Uncaught SyntaxError: Unexpected token '<'`라는 에러가 발생하네요. 아.. 스크립트에 작성한 부분은 JSX 문법인데 브라우저가 JS만 읽을 수 있어서 문제가 생긴 거구나.
+
+```html
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+```
