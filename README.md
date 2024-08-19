@@ -79,3 +79,19 @@ node_modules/
 dist/
 .env*
 ```
+
+### 6. 패키지를 설치하여 빌드 시 Babel을 실행
+
+> babel/preset-react : React용 바벨 문법 변환 패키지
+
+```bash
+npm init -y
+npm install --save-dev @babel/core @babel/cli @babel/preset-react
+```
+
+```json
+// .babelrc
+{
+  "presets": ["@babel/preset-react"]
+}
+```

@@ -1,0 +1,17 @@
+{
+  "name": "no-cra1",
+  "version": "1.0.0",
+  "description": "## 🎯 시작하기",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.24.8",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-react": "^7.24.7"
+  }
+}
