@@ -71,3 +71,11 @@
   root.render(<App />);
 </script>
 ```
+
+### 5. .gitignore 설정하기
+
+```
+node_modules/
+dist/
+.env*
+```
