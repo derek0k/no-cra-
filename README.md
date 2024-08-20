@@ -172,3 +172,17 @@ module.exports = {
 ```html
 <script src="dist/bundle.js" type="module"></script>
 ```
+
+### 12. 번들 파일에 해시값 추가하기
+
+> 이제 빌드와 번들링을 완료했지만, 새로 빌드한 bundle.js 파일이 브라우저에서 여전히 304 상태 코드로 캐시된 데이터를 사용하고 있습니다. 매번 캐시를 수동으로 비워야 하는 것은 불편하죠
+
+> 이 문제를 해결하는 방법 중 하나는 `캐시 무효화(Cache Busting)` 입니다. 파일 이름에 해시값을 추가하여 파일이 변경될 때마다 새로운 파일로 인식되도록 할 수 있습니다.
+
+```js
+// webpack.config.js
+output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.[contenthash].js'
+}
+```
