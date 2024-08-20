@@ -128,3 +128,34 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-react
 ```bash
 npm install --save-dev webpack webpack-cli babel-loader
 ```
+
+### 10. Webpack 설정하기
+
+> Webpack의 `mode` 설정은 왜 필요한 걸까요?
+> production 모드를 사용하면 코드가 최적화되어 실행 속도가 빨라지지만, 빌드 시간이 더 길어질 수 있습니다. 최적화 과정에서 함수의 결과값이 정적 값으로 계산되어 코드의 크기가 줄어들고, 빠른 파싱이 가능해집니다. 반면, development 모드를 사용하면 코드가 최적화되지 않아 빌드 시간은 짧아지지만 디버깅이 용이합니다. 따라서 개발 시점에서는 development 모드를 사용하는 것이 좋습니다.
+
+```js
+//webpack.config.js
+const path = require("path");
+
+module.exports = {
+  entry: "./src/app.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+  },
+  module: {
+    rules: [
+      //.css, .js 등 다양한 파일 확장자를 처리할 규칙 정의
+      {
+        test: /\.js$/, // 어떤 파일을 대상으로 할지 정규표현식으로 작성
+        exclude: /node_modules/, // node_modules 폴더는 제외
+        use: {
+          loader: "babel-loader", // babel-loader를 사용하여 ES6+ 코드를 변환
+        },
+      },
+    ],
+  },
+  mode: "development", // 없으면 warning 이 남
+};
+```
