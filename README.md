@@ -253,3 +253,36 @@ devServer: {
     hot: true, // 실시간 반영
   },
 ```
+
+### 16. 프로덕션과 개발 환경에 맞게 환경 변수 설정하기
+
+> 실제 현업에서는 개발 서버와 배포 서버를 구분하여 관리합니다. 이를 효율적으로 처리하려면 환경에 따라 다른 설정을 적용할 수 있는 방법이 필요합니다. 환경 변수를 사용하여 개발과 프로덕션 환경을 분기 처리해보겠습니다
+
+먼저, dotenv-webpack 패키지를 설치합니다:
+
+```bash
+npm install --save-dev dotenv-webpack
+```
+
+그 다음, Webpack 설정 파일(webpack.config.js)을 수정하여 환경 변수를 설정합니다:
+
+```js
+// webpack.config.js
+const DotenvWebpackPlugin = require("dotenv-webpack");
+
+const mode = process.env.NODE_ENV || "development";
+
+module.exports = {
+  mode,
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: "index.html",
+      filename: "index.html",
+    }),
+    new DotenvWebpackPlugin({
+      path: `./.env.${mode}`, // 환경에 따라 적절한 .env 로드
+    }),
+  ],
+};
+```

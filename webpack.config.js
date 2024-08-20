@@ -1,6 +1,9 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const DotenvWebpackPlugin = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+
+const mode = process.env.NODE_ENV || "development";
 
 module.exports = {
   entry: "./src/app.js",
@@ -25,6 +28,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "index.html", // 템플릿 HTML 파일
       filename: "index.html", // 출력할 HTML 파일 이름
+    }),
+    new DotenvWebpackPlugin({
+      path: `./.env.${mode}`,
     }),
   ],
   devServer: {
