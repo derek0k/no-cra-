@@ -286,3 +286,13 @@ module.exports = {
   ],
 };
 ```
+
+그리고 package.json 파일의 스크립트를 수정하여 환경 변수를 설정합니다:
+
+```json
+//package.json
+"scripts": {
+    "build": "webpack",
+    "start": "NODE_ENV=production webpack serve"
+  },
+```
