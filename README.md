@@ -207,3 +207,24 @@ plugins: [
   }),
 ];
 ```
+
+### 14. 빌드 시 이전 번들 파일 자동 삭제하는 플러그인 적용
+
+> 매번 빌드할 때마다 이전 번들 파일이 dist 폴더에 남아 있어서 파일이 쌓이거나 충돌할 수 있습니다. 이를 방지하기 위해, 빌드 시 자동으로 이전 파일을 삭제하는 플러그인을 사용할 수 있습니다
+
+```bash
+npm install --save-dev clean-webpack-plugin
+```
+
+```js
+// webpack.config
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+
+ plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: "index.html",
+      filename: "index.html",
+    }),
+  ],
+```
