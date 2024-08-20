@@ -296,3 +296,20 @@ module.exports = {
     "start": "NODE_ENV=production webpack serve"
   },
 ```
+
+### 17. 크로스 플랫폼 환경 변수 설정하기
+
+> 이전에는 개발 환경에 따라 script를 직접 조정하여 production이나 development로 변경할 수 있었습니다. 그러나 이 방법은 맥에서는 잘 작동하지만, 윈도우에서는 환경 변수 설정 방식이 다를 수 있습니다. 이를 해결하기 위해 다양한 운영 체제에서 환경 변수를 일관되게 설정할 수 있는 방법을 알아보겠습니다
+
+cross-env 패키지를 사용하면 환경 변수를 플랫폼에 관계없이 일관되게 설정할 수 있습니다. 먼저, cross-env 패키지를 설치합니다:
+
+```bash
+npm install --save-dev cross-env
+```
+
+그 다음, package.json 파일의 스크립트를 수정하여 cross-env를 사용하여 환경 변수를 설정합니다:
+
+```json
+//package.json
+ "start": "cross-env NODE_ENV=development webpack serve"
+```
