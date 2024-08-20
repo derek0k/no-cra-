@@ -159,3 +159,16 @@ module.exports = {
   mode: "development", // 없으면 warning 이 남
 };
 ```
+
+### 11. 빌드를 Webpack으로 수행하도록 수정
+
+```json
+// package.json
+"scripts": {
+    "build": "webpack"
+ },
+```
+
+```html
+<script src="dist/bundle.js" type="module"></script>
+```
