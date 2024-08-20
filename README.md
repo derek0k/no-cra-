@@ -186,3 +186,24 @@ output: {
     filename: 'bundle.[contenthash].js'
 }
 ```
+
+### 13. `html-webpack-plugin` 패키지 추가하기
+
+> 빌드할 때마다 생성된 해시값을 수동으로 HTML 파일에 업데이트하는 것은 매우 번거롭습니다. 이를 자동으로 처리할 수 있는 플러그인을 사용해보죠
+
+```bash
+npm install --save-dev html-webpack-plugin
+```
+
+```js
+// webpack.config
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+mode: "development";
+plugins: [
+  new HtmlWebpackPlugin({
+    template: "index.html", // 템플릿 HTML 파일
+    filename: "index.html", // 출력할 HTML 파일 이름
+  }),
+];
+```
