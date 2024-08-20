@@ -101,3 +101,12 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-react
 ```html
 <script type="text/babel" src="./src/app.js"></script>
 ```
+
+### 8. package.json에 Babel 빌드 스크립트 추가
+
+```json
+// package.json
+"scripts": {
+    "build": "babel src -d dist"
+ },
+```
