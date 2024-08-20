@@ -104,9 +104,15 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-react
 
 ### 8. package.json에 Babel 빌드 스크립트 추가
 
+> 이제 빌드한 파일을 HTML 스크립트에서 불러와서 사용하면 되겠네요. 아, 그리고 이제 Babel을 CDN으로 불러올 필요는 없겠군요.
+
 ```json
 // package.json
 "scripts": {
     "build": "babel src -d dist"
  },
+```
+
+```html
+<script src="./dist/app.js"></script>
 ```
