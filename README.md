@@ -228,3 +228,28 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
     }),
   ],
 ```
+
+### 15. 개발 서버 설정하여 코드 변경 사항을 실시간으로 반영하기
+
+> 매번 코드 변경 후 `npm run build` 명령어를 실행하는 것은 번거롭습니다. 코드 저장 시 자동으로 변경 사항을 반영해 주면 개발이 훨씬 수월하겠죠? 개발 서버를 설정하여 이 문제를 해결해 보겠습니다.
+
+먼저, webpack-dev-server 패키지를 설치합니다:
+
+```bash
+npm install --save-dev webpack-dev-server
+```
+
+그 다음, Webpack 설정 파일(webpack.config.js)을 수정하여 개발 서버를 설정합니다:
+
+```js
+// webpack.config.js
+mode: 'development', // 개발 모드
+devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    port: 9000, // 포트 번호
+    open: true, // 서버 시작 시 브라우저 자동 열기
+    hot: true, // 실시간 반영
+  },
+```

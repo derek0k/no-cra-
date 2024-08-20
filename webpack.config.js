@@ -27,5 +27,13 @@ module.exports = {
       filename: "index.html", // 출력할 HTML 파일 이름
     }),
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    port: 9000,
+    open: true,
+    hot: true,
+  },
   mode: "development", // 없으면 warning 이 남
 };
