@@ -6,6 +6,9 @@ const App = () => {
   const sum = add(2, 3);
   const diff = sub(2, 3);
   const product = mul(2, 3);
+
+  const apiUrl = process.env.APP_API_URL;
+  console.log(apiUrl);
   return (
     <h1>
       {sum}, {diff}, {product}
