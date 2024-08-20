@@ -95,3 +95,9 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-react
   "presets": ["@babel/preset-react"]
 }
 ```
+
+### 7. 스크립트 파일을 src 폴더로 이동
+
+```html
+<script type="text/babel" src="./src/app.js"></script>
+```
