@@ -116,3 +116,15 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-react
 ```html
 <script src="./dist/app.js"></script>
 ```
+
+### 9. Webpack과 관련된 패키지 설치하기
+
+> 브라우저는 한 번에 6개의 네트워크 요청만 처리할 수 있습니다. 파일이 많으면 그만큼 로드가 지연될 수 있겠죠? 고객 입장에서는 하나의 파일로 받아서 빠르게 로드하고 파싱하는 것이 좋지 않을까요?
+
+> 이 문제를 해결할 수 있는 도구가 바로 `Webpack`입니다. `Webpack`을 사용하여 여러 개의 파일을 하나로 묶어줍니다.
+
+다음 명령어를 실행하여 Webpack과 관련된 패키지를 설치해봅시다:
+
+```bash
+npm install --save-dev webpack webpack-cli babel-loader
+```
